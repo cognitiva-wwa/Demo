@@ -25,7 +25,7 @@ from plotly.subplots import make_subplots
 import json
 from scipy import stats
 import statsmodels.api as sm
-from  sklearn.metrics import mean_absolute_percentage_error
+#from  sklearn.metrics import mean_absolute_percentage_error
 import statsmodels.stats.stattools as sss
 from google.oauth2 import service_account
 from oauth2client.client import GoogleCredentials
@@ -331,8 +331,8 @@ if page == 'Empty page':
               pre.plot(legend=True, label='SARIMAX prediction')
               st.pyplot(fig_cast)
           
-         mape = mean_absolute_percentage_error(test, pre)
-         print('MAPE: %f' %mape)
+         #mape = mean_absolute_percentage_error(test, pre)
+         #print('MAPE: %f' %mape)
           
          future_sale= results.predict(start = len(y), end = (len(y)+12),dynamic=True)
          st.subheader('Forecast table and chart - SARIMAX model')
