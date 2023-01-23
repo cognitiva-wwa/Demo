@@ -33,12 +33,6 @@ from google.cloud import bigquery
 import datetime
 from datetime import datetime
 import pickle
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.optimizers import RMSprop    
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Dense,LSTM,Flatten
-from tensorflow.keras.layers import concatenate
 import db_dtypes
 import csv 
 
