@@ -19,13 +19,11 @@ from pivottablejs import pivot_ui
 import streamlit.components.v1 as components
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
-#import base64
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
 from scipy import stats
 import statsmodels.api as sm
-#from  sklearn.metrics import mean_absolute_percentage_error
 import statsmodels.stats.stattools as sss
 from google.oauth2 import service_account
 from oauth2client.client import GoogleCredentials
@@ -37,12 +35,6 @@ import db_dtypes
 import csv 
 
 st.set_page_config(layout = "wide")
-
-#@st.cache(allow_output_mutation=True)
-#def get_base64(bin_file):
-#    with open(bin_file, 'rb') as f:
-#        data = f.read()
-#    return base64.b64encode(data).decode()
 
 def load_data(nrows):
     DATA_URL="Wynik_3.txt"
@@ -330,9 +322,6 @@ if page == 'Empty page':
               test.plot(legend=True, label= 'Test')
               pre.plot(legend=True, label='SARIMAX prediction')
               st.pyplot(fig_cast)
-          
-         #mape = mean_absolute_percentage_error(test, pre)
-         #print('MAPE: %f' %mape)
           
          future_sale= results.predict(start = len(y), end = (len(y)+12),dynamic=True)
          st.subheader('Forecast table and chart - SARIMAX model')
