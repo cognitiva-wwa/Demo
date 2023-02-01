@@ -19,7 +19,7 @@ from pivottablejs import pivot_ui
 import streamlit.components.v1 as components
 from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
-import base64
+#import base64
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import json
@@ -38,11 +38,11 @@ import csv
 
 st.set_page_config(layout = "wide")
 
-@st.cache(allow_output_mutation=True)
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
+#@st.cache(allow_output_mutation=True)
+#def get_base64(bin_file):
+#    with open(bin_file, 'rb') as f:
+#        data = f.read()
+#    return base64.b64encode(data).decode()
 
 def load_data(nrows):
     DATA_URL="Wynik_3.txt"
