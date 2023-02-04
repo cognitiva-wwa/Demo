@@ -10,3 +10,4 @@ tensorflow==2.9.1
 IPython==7.22.0
 db_dtypes==1.0.3
 #sklearn==1.2.0
+seaborn==0.11.2
