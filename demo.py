@@ -492,13 +492,18 @@ if page == 'Empty page':
                                   
 if page == 'Empty page':
       col1, col2 = st.columns(2)
+        
+      try:
+        superstore_df = df
+      except:
+        st.error("Please make sure that you choose data")          
+        st.stop()
+        
       st.sidebar.text('Statistical data analysis:')
       with st.sidebar:
            add_radio = st.radio(
            "Choose an analysis:",
            ("Empty", "Tables&Plots"))
-           
-           superstore_df = df
            
            superstore_df['Profit_rate'] = superstore_df['Profit']/superstore_df['Sales']
            mean_list = [superstore_df.sample(frac=0.2, replace=False, random_state=seed)['Profit_rate'].mean() for seed in range(35)]
